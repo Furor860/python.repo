@@ -1,0 +1,541 @@
+import random
+i = r1 = random.randint(0,2)
+r2 = random.randint(0,2)
+r3 = random.randint(0,1)
+
+grid = [
+    [" "," "," "],
+    [" "," "," "],
+    [" "," "," "]
+]
+
+ctr1=0
+ctr2=0
+print("Remember, computer plays first here!!")
+if r3 == 0:
+    print("You have been allotted 'x' !")
+else:
+    print("You have been allotted 'o' !")
+
+while i<3:
+
+    if r3==0:
+        while grid[r1][r2] == "o" or grid[r1][r2] == "x":
+            r1 = random.randint(0, 2)
+            r2 = random.randint(0, 2)
+        grid[r1][r2] = "o"
+        i1 = r1
+        i2 = r2
+        print("computer's response! ")
+        j = 0
+        k = 0
+        for j in range(3):
+            for k in range(3):
+                print(grid[j][k], end=" ")
+            print()
+
+        if grid[0][0] == grid[0][1] == grid[0][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[0][0] == grid[0][1] == grid[0][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+        elif grid[1][0] == grid[1][1] == grid[1][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[1][0] == grid[1][1] == grid[1][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+        elif grid[2][0] == grid[2][1] == grid[2][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[2][0] == grid[2][1] == grid[2][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+
+        elif grid[0][0] == grid[1][0] == grid[2][0] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][0] == grid[1][0] == grid[2][0] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][1] == grid[1][1] == grid[2][1] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][1] == grid[1][1] == grid[2][1] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][2] == grid[1][2] == grid[2][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][2] == grid[1][2] == grid[2][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][0] == "o" and grid[2][2] == "o" and grid[1][1] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            break
+        elif grid[0][0] == "x" and grid[2][2] == "x" and grid[1][1] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            ctr1 += 1
+            break
+        elif grid[1][1] == "o" and grid[2][0] == "o" and grid[0][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            break
+        elif grid[1][1] == "x" and grid[2][0] == "x" and grid[0][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            ctr1 += 1
+            break
+
+        for k in range(3):
+            for l in range(3):
+                if grid[k][l] == "o" or grid[k][l] == "x":
+                    ctr2 += 1
+
+        while grid[i1][i2] == "o" or grid[i1][i2] == "x":
+            i1 = int(input("row index: "))
+            i2 = int(input("column index: "))
+        i3 = "x"
+        grid[i1][i2] = i3
+        j = 0
+        k = 0
+        for j in range(3):
+            for k in range(3):
+                print(grid[j][k], end=" ")
+            print()
+
+        if grid[0][0] == grid[0][1] == grid[0][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[0][0] == grid[0][1] == grid[0][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+        elif grid[1][0] == grid[1][1] == grid[1][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[1][0] == grid[1][1] == grid[1][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+        elif grid[2][0] == grid[2][1] == grid[2][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[2][0] == grid[2][1] == grid[2][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+
+        elif grid[0][0] == grid[1][0] == grid[2][0] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][0] == grid[1][0] == grid[2][0] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][1] == grid[1][1] == grid[2][1] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][1] == grid[1][1] == grid[2][1] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][2] == grid[1][2] == grid[2][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][2] == grid[1][2] == grid[2][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][0] == "o" and grid[2][2] == "o" and grid[1][1] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            break
+        elif grid[0][0] == "x" and grid[2][2] == "x" and grid[1][1] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            ctr1 += 1
+            break
+        elif grid[1][1] == "o" and grid[2][0] == "o" and grid[0][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            break
+        elif grid[1][1] == "x" and grid[2][0] == "x" and grid[0][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            ctr1 += 1
+            break
+
+
+
+    else:
+        while grid[r1][r2] == "o" or grid[r1][r2] == "x":
+            r1 = random.randint(0, 2)
+            r2 = random.randint(0, 2)
+        grid[r1][r2] = "x"
+        i1 = r1
+        i2 = r2
+        j = 0
+        k = 0
+        print("computer's response! ")
+        for j in range(3):
+            for k in range(3):
+                print(grid[j][k], end=" ")
+            print()
+
+        if grid[0][0] == grid[0][1] == grid[0][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[0][0] == grid[0][1] == grid[0][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+        elif grid[1][0] == grid[1][1] == grid[1][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[1][0] == grid[1][1] == grid[1][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+        elif grid[2][0] == grid[2][1] == grid[2][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[2][0] == grid[2][1] == grid[2][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+
+        elif grid[0][0] == grid[1][0] == grid[2][0] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][0] == grid[1][0] == grid[2][0] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][1] == grid[1][1] == grid[2][1] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][1] == grid[1][1] == grid[2][1] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][2] == grid[1][2] == grid[2][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][2] == grid[1][2] == grid[2][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][0] == "o" and grid[2][2] == "o" and grid[1][1] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            break
+        elif grid[0][0] == "x" and grid[2][2] == "x" and grid[1][1] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            ctr1 += 1
+            break
+        elif grid[1][1] == "o" and grid[2][0] == "o" and grid[0][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            break
+        elif grid[1][1] == "x" and grid[2][0] == "x" and grid[0][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            ctr1 += 1
+            break
+
+        for k in range(3):
+            for l in range(3):
+                if grid[k][l] == "o" or grid[k][l] == "x":
+                    ctr2 += 1
+
+        while grid[i1][i2] == "o" or grid[i1][i2] == "x":
+            i1 = int(input("row index: "))
+            i2 = int(input("column index: "))
+        i3 = "o"
+        grid[i1][i2] = i3
+        j = 0
+        k = 0
+        for j in range(3):
+            for k in range(3):
+                print(grid[j][k], end=" ")
+            print()
+
+        if grid[0][0] == grid[0][1] == grid[0][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[0][0] == grid[0][1] == grid[0][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+        elif grid[1][0] == grid[1][1] == grid[1][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[1][0] == grid[1][1] == grid[1][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+        elif grid[2][0] == grid[2][1] == grid[2][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            break
+        elif grid[2][0] == grid[2][1] == grid[2][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("ROW MATCH")
+            ctr1 += 1
+            break
+
+        elif grid[0][0] == grid[1][0] == grid[2][0] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][0] == grid[1][0] == grid[2][0] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][1] == grid[1][1] == grid[2][1] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][1] == grid[1][1] == grid[2][1] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][2] == grid[1][2] == grid[2][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            break
+        elif grid[0][2] == grid[1][2] == grid[2][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("COLUMN MATCH")
+            ctr1 += 1
+            break
+        elif grid[0][0] == "o" and grid[2][2] == "o" and grid[1][1] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            break
+        elif grid[0][0] == "x" and grid[2][2] == "x" and grid[1][1] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            ctr1 += 1
+            break
+        elif grid[1][1] == "o" and grid[2][0] == "o" and grid[0][2] == "o":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            break
+        elif grid[1][1] == "x" and grid[2][0] == "x" and grid[0][2] == "x":
+            print("\n")
+            print("\n")
+            print("\n")
+            print("DIAGONAL MATCH")
+            ctr1 += 1
+            break
+
+
+
+    i = r1 = random.randint(0, 2)
+    r2 = random.randint(0, 2)
+
+
+if ctr1==0 and r3==0:
+    print("Game won by COMPUTER i.e. 'o' ")
+    for j in range(3):
+        for k in range(3):
+            print(grid[j][k], end=" ")
+        print()
+elif ctr1==0 and r3==1:
+    print("Game won by USER i.e. 'o' ")
+    for j in range(3):
+        for k in range(3):
+            print(grid[j][k], end=" ")
+        print()
+elif ctr1==1 and r3==1:
+    print("Game won by COMPUTER i.e. 'x' ")
+    for j in range(3):
+        for k in range(3):
+            print(grid[j][k], end=" ")
+        print()
+elif ctr1==1 and r3==0:
+    print("Game won by USER i.e. 'x' ")
+    for j in range(3):
+        for k in range(3):
+            print(grid[j][k], end=" ")
+        print()
