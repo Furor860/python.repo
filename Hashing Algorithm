@@ -1,0 +1,67 @@
+import hashlib
+
+flag = 0
+a = int(input("enter '1' to signup and '2' for login, '0' to exit: "))
+while a!=0:
+    if a==1 and flag==1:
+        print("Signup already completed!")
+        a = int(input("enter '1' to signup and '2' for login, '0' to exit: "))
+    elif a==1:
+        u_name = input("Enter new username: ")
+        h = hashlib.new("SHA256")
+        h.update(u_name.encode())
+        u_name_hash = h.hexdigest()
+
+        pwd = input("Enter new password: ")
+        h = hashlib.new("SHA256")
+        h.update(pwd.encode())
+        pwd_hash = h.hexdigest()
+
+        print("SignUp Complete!")
+        flag = 1
+        a = int(input("enter '1' to signup and '2' for login, '0' to exit: "))
+
+    elif a==2 and flag==0:
+        print("You need to signup first!")
+        u_name = input("Enter new username: ")
+        h = hashlib.new("SHA256")
+        h.update(u_name.encode())
+        u_name_hash = h.hexdigest()
+
+        pwd = input("Enter new password: ")
+        h = hashlib.new("SHA256")
+        h.update(pwd.encode())
+        pwd_hash = h.hexdigest()
+        print("Signup complete!")
+
+        a = int(input("enter '1' to signup and '2' for login, '0' to exit: "))
+        flag = 1
+
+    elif a==2 and flag==1:
+        print("Welcome to login page user!")
+        u1 = input("Enter username: ")
+        h = hashlib.new("SHA256")
+        h.update(u1.encode())
+        u1_hash = h.hexdigest()
+        while u1_hash != u_name_hash:
+            print("Incorrect username!")
+            u1 = input("Enter username: ")
+            h = hashlib.new("SHA256")
+            h.update(u1.encode())
+            u1_hash = h.hexdigest()
+
+        p1 = input("Enter password: ")
+        h = hashlib.new("SHA256")
+        h.update(p1.encode())
+        p1_hash = h.hexdigest()
+        while p1_hash != pwd_hash:
+            print("Incorrect password!")
+            p1 = input("Enter password: ")
+            h = hashlib.new("SHA256")
+            h.update(p1.encode())
+            p1_hash = h.hexdigest()
+
+        print("Login successful, welcome " + u_name)
+        a=0
+
+print("Exiting program...")
